@@ -11,6 +11,12 @@ const index = () => {
         </li>
 
         <li>
+            <Link href={'/pokemons'}>
+                Pokemons
+            </Link>
+        </li>
+
+        <li>
             <Link href={'/about'}>
                About
             </Link>

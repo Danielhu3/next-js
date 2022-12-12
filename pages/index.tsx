@@ -4,6 +4,7 @@ export default function Home() {
     <>
       <Head title='Home' keywordsContent='Home, página inicial'/>
       <h1>Hello World</h1>
+
     
     </>
   )
