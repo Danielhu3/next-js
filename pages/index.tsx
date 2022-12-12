@@ -1,13 +1,10 @@
-import Head from 'next/head'
+import Head from '../components/head'
 export default function Home() {
   return (
     <>
-    <Head>
-      <title>Home</title>
-    </Head>
-    <div>
+      <Head title='Home' keywordsContent='Home, página inicial'/>
       <h1>Hello World</h1>
-    </div>
+    
     </>
   )
 }

@@ -1,11 +1,8 @@
-import Head from 'next/head'
+import Head from '../components/head'
 const about = () => {
   return (
     <>
-    <Head>
-      <title>About</title>
-    </Head>
-    
+    <Head title='About' keywordsContent='about, sobre'/>
     <h1>About</h1>
     </>
     
