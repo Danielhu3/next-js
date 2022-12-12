@@ -1,6 +1,14 @@
+import Head from 'next/head'
 const about = () => {
   return (
-    <h1>about</h1>
+    <>
+    <Head>
+      <title>About</title>
+    </Head>
+    
+    <h1>About</h1>
+    </>
+    
   )
 }
 

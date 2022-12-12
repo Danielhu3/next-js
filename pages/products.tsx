@@ -1,6 +1,14 @@
+import Head from 'next/head'
 const products = () => {
   return (
-    <h1>products</h1>
+    <>
+    <Head>
+      <title>Products</title>
+    </Head>
+
+    <h1>Products</h1>
+    </>
+    
   )
 }
 
