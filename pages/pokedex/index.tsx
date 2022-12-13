@@ -25,10 +25,14 @@ export async function getStaticProps(){
 const index = ({results}:Pokemons) => {
 
     function getPokemonId(url:string){
-        return url.split('pokemon/').pop()?.split('/')[0]
+        let pokemonId =  url.split('pokemon/').pop()?.split('/')[0]
+        pokemonId = '00' + pokemonId
+        pokemonId = pokemonId.slice(-3)
+        return pokemonId
+
+
     }
     
-    results.map((item)=>console.log(getPokemonId(item.url)))
 
     
   return (
