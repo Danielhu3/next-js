@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export async function getStaticProps(){
-    const data = await fetch('https://pokeapi.co/api/v2/pokemon?offset=100&limit=10')
+    const data = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=10')
     const json = await data.json()
 
     return {
@@ -26,9 +27,12 @@ const index = ({results}:Pokemons) => {
 
     function getPokemonId(url:string){
         let pokemonId =  url.split('pokemon/').pop()?.split('/')[0]
+        return pokemonId
+        /*
         pokemonId = '00' + pokemonId
         pokemonId = pokemonId.slice(-3)
         return pokemonId
+        */
 
 
     }
@@ -41,12 +45,15 @@ const index = ({results}:Pokemons) => {
     
     {
     results.map((item)=> 
-    <Image 
-    key={item.name}
-    src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${getPokemonId(item.url)}.png`}
+    <React.Fragment key={item.name}>
+    <Image   
+    src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${('00'+getPokemonId(item.url)).slice(-3)}.png`}
     alt={item.name}
-    width={475} height={475}
-    ></Image>)
+    width={475} height={475}>
+    </Image>
+    <Link href={`/pokedex/${getPokemonId(item.url)}`}>{item.name}</Link>
+    </React.Fragment>
+    )
     
     }
     </>

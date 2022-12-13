@@ -17,6 +17,12 @@ const index = () => {
         </li>
 
         <li>
+            <Link href={'/todos'}>
+                Todos
+            </Link>
+        </li>
+
+        <li>
             <Link href={'/about'}>
                About
             </Link>
