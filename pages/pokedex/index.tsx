@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export async function getStaticProps(){
-    const data = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=10')
+    const data = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
     const pokemons = await data.json()
 
     return {
